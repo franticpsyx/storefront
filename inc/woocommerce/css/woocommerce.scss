@@ -224,7 +224,7 @@ ul.products {
 			}
 		}
 
-		form.cart {
+		form.cart, form.cart_group {
 			@include clearfix;
 			margin-bottom: 1.618em;
 			padding: 1.618em 0;
