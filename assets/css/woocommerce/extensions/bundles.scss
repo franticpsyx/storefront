@@ -19,6 +19,43 @@
 	}
 }
 
+.woocommerce, .woocommerce-page, .page-template-template-fullwidth-php, .storefront-full-width-content {
+	#content div.product, div.product {
+		.bundle_form .bundled_product_images {
+			@include span( 10 of 10 );
+		}
+	}
+}
+
+.bundle_form {
+	div.bundled_product_summary {
+
+		padding-left: 0;
+
+		.bundled_product_images {
+
+			margin-left: 0;
+
+			a {
+				margin: 0 !important;
+			}
+
+			img {
+				width: 100% !important;
+				margin-bottom: 1em;
+			}
+		}
+	}
+
+	div.bundled_product_summary:not( .thumbnail_hidden ) {
+		.details {
+			padding: 0;
+			@include span( 10 of 10 );
+			font-size: ms(-1);
+		}
+	}
+}
+
 @include susy-media($desktop) {
 
 	.woocommerce, .woocommerce-page {
@@ -26,7 +63,6 @@
 		#content div.product, div.product {
 			.bundle_form .bundled_product_images {
 				@include span( 2 of 10 );
-				margin-bottom: 0;
 			}
 		}
 	}
@@ -35,48 +71,20 @@
 		#content div.product, div.product {
 			.bundle_form .bundled_product_images {
 				@include span( 2 of 8 );
-				margin-bottom: 0;
 			}
 		}
 	}
 
 	.bundle_form {
-		div.bundled_product_summary {
-
-			padding-left: 0;
-
-			.bundled_product_images {
-
-				margin-left: 0;
-
-				a {
-					margin: 0 !important;
-				}
-
-				img {
-					width: 100% !important;
-				}
-			}
-		}
-
 		div.bundled_product_summary:not( .thumbnail_hidden ) {
 			.details {
-				padding: 0;
 				@include span( last 8 of 10 );
-				font-size: ms(-1);
 			}
 		}
 	}
 
 	.page-template-template-fullwidth-php, .storefront-full-width-content {
-
 		.bundle_form {
-			div.bundled_product_summary {
-				.bundled_product_images {
-					margin-left: 0;
-				}
-			}
-
 			div.bundled_product_summary:not( .thumbnail_hidden ) {
 				.details {
 					@include span( last 6 of 8 );
@@ -87,3 +95,38 @@
 	}
 }
 
+@include susy-media(max-width $handheld) {
+
+	.bundled_product_summary .bundled_product_images {
+		max-width: 50%;
+	}
+
+	table.bundled_products td {
+		display: block;
+	}
+
+	table.bundled_products thead {
+		display: none;
+	}
+
+	table.bundled_products tr td.bundled_item_images_col {
+		width: 100%;
+		padding-bottom: 0;
+	}
+
+	table.bundled_products tr {
+
+		td.bundled_item_images_col, td.bundled_item_details_col {
+			padding-bottom: 0;
+		}
+
+		td.bundled_item_images_col {
+			width: 100%;
+		}
+	}
+
+	table.bundled_products tr td.bundled_item_qty_col {
+		max-width: 100%;
+		text-align: left;
+	}
+}
