@@ -40,6 +40,7 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 			}
 
 			// Integrations.
+			add_action( 'storefront_woocommerce_setup', array( $this, 'setup_integrations' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_integrations_scripts' ), 99 );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_customizer_css' ), 140 );
 		}
@@ -74,6 +75,13 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 			add_theme_support( 'wc-product-gallery-zoom' );
 			add_theme_support( 'wc-product-gallery-lightbox' );
 			add_theme_support( 'wc-product-gallery-slider' );
+
+			/**
+			 * Add 'storefront_woocommerce_setup' action.
+			 *
+			 * @since  2.4.0
+			 */
+			do_action( 'storefront_woocommerce_setup' );
 		}
 
 		/**
