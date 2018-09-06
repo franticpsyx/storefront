@@ -56,10 +56,19 @@
 	}
 }
 
+.bundled_table_item {
+	.product-name {
+		padding-left: 4.045em;
+	}
+}
+
 @include susy-media($desktop) {
 
-	.woocommerce, .woocommerce-page {
+	.bundle_table_item dl.bundle_configuration {
+		display: none;
+	}
 
+	.woocommerce, .woocommerce-page {
 		#content div.product, div.product {
 			.bundle_form .bundled_product_images {
 				@include span( 2 of 10 );
@@ -96,6 +105,10 @@
 }
 
 @include susy-media(max-width $handheld) {
+
+	table.shop_table_responsive tr.bundled_table_item {
+		display: none;
+	}
 
 	.bundled_product_summary .bundled_product_images {
 		max-width: 50%;

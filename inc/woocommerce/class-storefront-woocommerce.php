@@ -484,7 +484,24 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 
 			if ( $this->is_woocommerce_extension_activated( 'WC_Bundles' ) ) {
 				add_filter( 'woocommerce_bundled_table_item_js_enqueued', '__return_true' );
+				add_filter( 'woocommerce_bundles_group_mode_options_data', array( $this, 'bundles_group_mode_options_data' ) );
 			}
+		}
+
+		/**
+		 * Add "Includes" meta to parent cart items.
+		 * Displayed only on handheld/mobile screens.
+		 *
+		 * @since  2.4.0
+		 *
+		 * @param  array  $group_mode_data
+		 * @return array
+		 */
+		public function bundles_group_mode_options_data( $group_mode_data ) {
+
+			$group_mode_data[ 'parent' ][ 'features' ][] = 'parent_cart_item_meta';
+
+			return $group_mode_data;
 		}
 	}
 
