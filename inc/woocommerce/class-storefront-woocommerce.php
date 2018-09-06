@@ -481,6 +481,10 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 		 * @return void
 		 */
 		public function setup_integrations() {
+
+			if ( $this->is_woocommerce_extension_activated( 'WC_Bundles' ) ) {
+				add_filter( 'woocommerce_bundled_table_item_js_enqueued', '__return_true' );
+			}
 		}
 	}
 
