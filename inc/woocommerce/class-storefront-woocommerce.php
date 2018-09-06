@@ -466,6 +466,22 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 
 			return apply_filters( 'storefront_customizer_woocommerce_extension_css', $woocommerce_extension_style );
 		}
+
+		/*
+		|--------------------------------------------------------------------------
+		| Integrations.
+		|--------------------------------------------------------------------------
+		*/
+
+		/**
+		 * Sets up integrations.
+		 *
+		 * @since  2.4.0
+		 *
+		 * @return void
+		 */
+		public function setup_integrations() {
+		}
 	}
 
 endif;
