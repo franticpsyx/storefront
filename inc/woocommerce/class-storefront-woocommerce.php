@@ -486,6 +486,11 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 				add_filter( 'woocommerce_bundled_table_item_js_enqueued', '__return_true' );
 				add_filter( 'woocommerce_bundles_group_mode_options_data', array( $this, 'bundles_group_mode_options_data' ) );
 			}
+
+			if ( $this->is_woocommerce_extension_activated( 'WC_Composite_Products' ) ) {
+				add_filter( 'woocommerce_composited_table_item_js_enqueued', '__return_true' );
+				add_filter( 'woocommerce_display_composite_container_cart_item_data', '__return_true' );
+			}
 		}
 
 		/**
