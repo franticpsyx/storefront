@@ -118,40 +118,49 @@
 
 @include susy-media(max-width $handheld) {
 
-	table.shop_table_responsive tr.bundled_table_item {
-		display: none;
-	}
+	.bundle_form {
 
-	.bundled_product_summary .bundled_product_images {
-		max-width: 50%;
-	}
+		table.shop_table_responsive tr.bundled_table_item {
+			display: none;
+		}
 
-	table.bundled_products td {
-		display: block;
-	}
+		.bundled_product_summary .bundled_product_images {
+			max-width: 50%;
+		}
 
-	table.bundled_products thead {
-		display: none;
-	}
+		div.bundled_product_summary .bundled_product_images {
+			img {
+				margin-bottom: 1em;
+			}
+		}
 
-	table.bundled_products tr td.bundled_item_images_col {
-		width: 100%;
-		padding-bottom: 0;
-	}
+		table.bundled_products td {
+			display: block;
+		}
 
-	table.bundled_products tr {
+		table.bundled_products thead {
+			display: none;
+		}
 
-		td.bundled_item_images_col, td.bundled_item_details_col {
+		table.bundled_products tr td.bundled_item_images_col {
+			width: 100%;
 			padding-bottom: 0;
 		}
 
-		td.bundled_item_images_col {
-			width: 100%;
-		}
-	}
+		table.bundled_products tr {
 
-	table.bundled_products tr td.bundled_item_qty_col {
-		max-width: 100%;
-		text-align: left;
+			td.bundled_item_images_col, td.bundled_item_details_col {
+				padding-bottom: 0;
+			}
+
+			td.bundled_item_images_col {
+				width: 100%;
+			}
+		}
+
+		table.bundled_products tr td.bundled_item_qty_col {
+			max-width: 100%;
+			text-align: left;
+		}
 	}
 }
