@@ -131,11 +131,11 @@
 
 @include susy-media(max-width $handheld) {
 
-	.bundle_form {
+	table.shop_table_responsive tr.bundled_table_item {
+		display: none;
+	}
 
-		table.shop_table_responsive tr.bundled_table_item {
-			display: none;
-		}
+	.bundle_form {
 
 		.bundled_product_summary .bundled_product_images {
 			max-width: 50%;
