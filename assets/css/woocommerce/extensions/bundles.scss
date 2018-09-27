@@ -17,28 +17,12 @@
  */
 
 .bundle_form {
+
 	div.bundled_product_summary {
+
 		padding-bottom: ms(3) !important;
 		margin-bottom: ms(3);
 		border-bottom: 1px solid $color_border;
-	}
-	div.bundled_product_summary, tr.bundled_product_summary {
-		.details {
-			font-size: ms(-1);
-		}
-	}
-}
-
-.woocommerce, .woocommerce-page {
-	#content div.product, div.product {
-		.bundle_form .bundled_product_images {
-			@include span( 10 of 10 );
-		}
-	}
-}
-
-.bundle_form {
-	div.bundled_product_summary {
 
 		padding-left: 0;
 
@@ -57,10 +41,34 @@
 		}
 	}
 
+	div.bundled_product_summary, tr.bundled_product_summary {
+		.details {
+			font-size: ms(-1);
+		}
+	}
+}
+
+.woocommerce, .woocommerce-page {
+	#content div.product, div.product {
+		.bundle_form div.bundled_product_summary .bundled_product_images {
+			@include span( 2 of 10 );
+		}
+	}
+}
+
+.bundle_form {
 	div.bundled_product_summary:not( .thumbnail_hidden ) {
 		.details {
-			padding: 0;
-			@include span( 10 of 10 );
+			@include span( last 8 of 10 );
+		}
+	}
+}
+
+
+.bundle_form {
+	div.bundled_product_summary:not( .thumbnail_hidden ) {
+		.details {
+			padding: 0 !important;
 		}
 	}
 }
@@ -91,26 +99,10 @@
 		}
 	}
 
-	.woocommerce, .woocommerce-page {
-		#content div.product, div.product {
-			.bundle_form .bundled_product_images {
-				@include span( 2 of 10 );
-			}
-		}
-	}
-
-	.bundle_form {
-		div.bundled_product_summary:not( .thumbnail_hidden ) {
-			.details {
-				@include span( last 8 of 10 );
-			}
-		}
-	}
-
 	.sp-product-gallery-stacked, .storefront-full-width-content, .page-template-template-fullwidth-php {
 
 		#content div.product, div.product {
-			.bundle_form .bundled_product_images {
+			.bundle_form div.bundled_product_summary .bundled_product_images {
 				@include span( 2 of 8 );
 			}
 		}
@@ -131,13 +123,29 @@
 
 @include susy-media(max-width $handheld) {
 
+	.woocommerce, .woocommerce-page {
+		#content div.product, div.product {
+			.bundle_form div.bundled_product_summary .bundled_product_images {
+				@include span( 10 of 10 );
+			}
+		}
+	}
+
+	.bundle_form {
+		div.bundled_product_summary:not( .thumbnail_hidden ) {
+			.details {
+				@include span( 10 of 10 );
+			}
+		}
+	}
+
 	table.shop_table_responsive tr.bundled_table_item {
 		display: none;
 	}
 
 	.bundle_form {
 
-		.bundled_product_summary .bundled_product_images {
+		div.bundled_product_summary .bundled_product_images {
 			max-width: 50%;
 		}
 
